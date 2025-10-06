@@ -1,15 +1,16 @@
 <!DOCTYPE html>
+<link rel="stylesheet" href="index.css">
 <html>
 <head> 
-	<h2>Info</h2>
-		<p><a href="rowancbailey@lewisu.edu">Send me and email!</a><p>
-		<p>Discord: RTK64
-         <p>9/15/2025</p>
+	<h1 id="greeting"></h1>
+	<p id="time"></p>
+
 </head>
 <body>
    <h1>Getting To Know Each Other</h1>
-	<h2>Rowan Bailey</h2>
-<img src="Me-800-by-800.png.png" alt="Rowan Bailey">
+   <h2 id="quote"></h2>
+	<h2 id="myname">Rowan Bailey</h2>
+<img src="Me-800-by-800.JPG" alt="Rowan Bailey">
 
 <h3>Introduction</h3>
 	<p>Hello, my name is Rowan Bailey im a senior aviation administration major. I am from Palatine Il and have a sister and 4 cats.
@@ -24,9 +25,39 @@
 		<li>tabletop games</li>
 		<li>miniature painting</li>
 		<li>weightlifting</li>
-		<a href=https://start-warhammer.com/">Click Here</a>
+		<a href="https://start-warhammer.com/">Click Here</a>
 	</ul>
 <h3>Fun Fact</h3>
 	<p>I studied in rome for a semester.</p>
+
+    <h2>Info</h2>
+		<p><a href="mailto:rowancbailey@lewisu.edu">Send me and email!</a><p>
+		<p>Discord: RTK64
+         <p>9/15/2025</p>
+
+
+<script>
+  const greeting = document.getElementById("greeting");
+  const hour = new Date().getHours();
+
+  if (hour < 12) {
+    greeting.textContent = "Good morning and welcome to my page!";
+  } else if (hour < 18) {
+    greeting.textContent = "Good afternoon, thanks for stopping by!";
+  } else {
+    greeting.textContent = "Good evening, glad you're here!";
+  }
+</script>
+
+
+<script>
+  document.getElementById("time").textContent = "Today is: " + new Date().toLocaleString();
+</script>
+
+<script>
+	document.getElementById("myname").addEventListener("click", function () {
+		myname.style.color = "#808000";
+	});	
+</script>
 </body>
 </html>
