@@ -1,0 +1,38 @@
+
+body {
+  background-color: #f9fafb;          
+  font-family: Arial, sans-serif;     
+  color: #1f2937;                      
+  line-height: 1.6;
+  padding: 20px;
+}
+
+
+#greeting {
+  color: #07004b;
+}
+
+#time {
+  color: #047abe;
+  text-align: center;
+}
+
+img {
+  border: 50%;
+  border: 3px solid #000103;
+  text-align: center;
+  width: 400px;
+}
+
+h1 {
+  color: #2563eb;           
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+h2, h3 {
+  color: #1e40af;
+  margin-top: 20px;
+  border-bottom: 2px solid #2563eb;
+  padding-bottom: 4px;
+}
