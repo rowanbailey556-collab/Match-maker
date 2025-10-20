@@ -3,8 +3,7 @@
 body {
   font-family: system-ui, Arial, sans-serif;
   margin: 20px;
-  max-width: 720px;
-}
+  max-width: 720px;}
 
 h1 { font-size: 1.25rem; margin: 0 0 12px; }
 
@@ -12,8 +11,7 @@ h1 { font-size: 1.25rem; margin: 0 0 12px; }
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 12px;
-  margin: 10px 0;
-}
+  margin: 10px 0;}
 
 .q { margin: 8px 0; }
 
@@ -24,9 +22,9 @@ select { padding: 4px; }
 button {
   padding: 8px 12px;
   margin-top: 10px;
-  cursor: pointer;
-}
+  cursor: pointer;}
 
 #out { margin-top: 12px; font-weight: bold; }
 
 small { color: #555; }
+
