@@ -82,6 +82,11 @@ else if (score >= 75) verdict = 'Let\'s be friends 🙂';
 
 
 $('#out').textContent = `${score} / 100 — ${verdict}`;
+
+selects.forEach((s, i) => {
+      const user = s.value;
+      const ideal = s.dataset.ideal;
+      alert(`Question ${i + 1}:\nIdeal answer = ${ideal}\nYour answer = ${user}`);
 });
 </script>
 </body>
