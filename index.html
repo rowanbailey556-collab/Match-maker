@@ -63,39 +63,44 @@
 
 
 <script>
-  const $ = s => document.querySelector(s);
-  const $$ = s => Array.from(document.querySelectorAll(s));
-
-  $('#go').addEventListener('click', () => {
-    const selects = $$('select[data-ideal]');
+const $ = s => document.querySelector(s);
+const $$ = s => document.querySelectorAll(s);
 
 
-    if (selects.some(s => !s.value)) {
-      $('#out').textContent = 'Please answer all five questions.';
-      return;
-    }
-
-	const totalDiff = selects.reduce((sum, s) => 
-      sum + Math.abs(Number(s.value) - Number(s.dataset.ideal)), 0);
-
-    
-    const score = Math.max(0, 100 - totalDiff);
+$('#go').addEventListener('click', () => {
+const selects = $$('select[data-ideal]');
+if ([...selects].some(s => !s.value)) {
+alert('Please answer all five questions.');
+return;
+}
 
 
-    let verdict = 'Run away! 🏃‍♀️';
-    if (score >= 90) verdict = 'True Love 💖';
-    else if (score >= 75) verdict = 'Let\'s be friends 🙂';
+let totalDiff = 0;
+let details = '';
+selects.forEach((s, i) => {
+const user = Number(s.value);
+const ideal = Number(s.dataset.ideal);
+totalDiff += Math.abs(user - ideal);
+details += `Question ${i + 1}: Ideal = ${ideal}, You = ${user}
+`;
+});
 
 
-    $('#out').textContent = `${score} / 100 — ${verdict}`;
+const score = Math.max(0, 100 - totalDiff);
+let verdict = 'Run away! 🏃‍♀️';
+if (score >= 90) verdict = 'True Love 💖';
+else if (score >= 75) verdict = 'Let\'s be friends 🙂';
 
 
-    selects.forEach((s, i) => {
-      const user = s.value;
-      const ideal = s.dataset.ideal;
-      alert(`Question ${i + 1}:\nIdeal answer = ${ideal}\nYour answer = ${user}`);
-    });
-  });
+$('#out').textContent = `${score} / 100 — ${verdict}`;
+
+
+alert(`Your Answers vs Ideals:
+
+
+${details}
+Final Score: ${score}/100 — ${verdict}`);
+});
 </script>
 </body>
 </html>
